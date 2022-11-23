@@ -1,0 +1,39 @@
+.section__container {
+  position: relative;
+  width: 100%;
+  padding: 0 20px 0 20px;
+  z-index: 0;
+}
+
+.section__wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  top: 0;
+}
+
+.prevBtn {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  width: 35px;
+  height: 35px;
+  transform: translate(-50%, -50%);
+  color: rgb(189, 189, 189);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nextBtn {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  width: 35px;
+  height: 35px;
+  transform: translate(-50%, -50%);
+  color: rgb(189, 189, 189);
+  cursor: pointer;
+  z-index: 1;
+}
+

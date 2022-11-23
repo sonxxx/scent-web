@@ -1,0 +1,167 @@
+.section {
+  width: 100%;
+  height: 100%;
+  padding-top: 90px;
+  padding-bottom: 140px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 50px 10px;
+}
+
+h2 {
+  text-align: left;
+  padding: 30px 40px;
+}
+
+.emptyCart {
+  padding-top: 100px;
+}
+
+.emptyCart p {
+  margin-bottom: 0px;
+  padding-top: 10px;
+}
+
+.cartList {
+  width: 100%;
+  height: 100%;
+}
+
+.list__box img {
+  width: 110px;
+  height: 150px;
+}
+
+table {
+  border-top: solid 1.5px #787878;
+}
+
+thead {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+input {
+  width: 15px;
+  height: 15px;
+}
+
+tbody {
+  font-size: 14px;
+}
+
+td {
+  padding: 15px 0;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.opt__countButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opt__countButton button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  color: #7a7a7a;
+  font-size: 20px;
+  margin-top: -5px;
+}
+
+.opt__countButton span {
+  padding: 0 10px;
+  color: #5d5d5d;
+}
+
+.itemDel {
+  width: 180px;
+  height: 40px;
+  margin-top: 0px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 7px;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 100px;
+  right: 15px;
+  width: 120px;
+  height: 30px;
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 0px;
+}
+
+.shopBtn {
+  width: 220px;
+  height: 50px;
+  margin-top: 40px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.shopBtn:hover {
+  color: #ffffff;
+  background-color: #3a3a3a;
+}
+
+.totalBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  padding: 20px 30px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.totalBox__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalBox__left {
+  text-align: left;
+}
+
+.totalBox hr {
+  width: 100%;
+  border: 1px solid #a3a3a3;
+}
+
+.totalBox__right {
+  text-align: right;
+}
+
+.totalBox__result {
+  display: flex;
+  justify-content: space-between;
+}
+
+.purchaseBtn {
+  width: 250px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+}
+
+.purchaseBtn:hover {
+  color: #ffffff;
+  background-color: #3a3a3a;
+}

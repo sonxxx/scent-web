@@ -1,5 +1,20 @@
+@font-face {
+  font-family: 'spoqaHanSansNeo';
+  src: url(./assets/font/SpoqaHanSansNeo-Medium.woff2) format('woff2');
+  font-family: 'spoqaHanSansNeoRegular';
+  src: url(./assets/font/SpoqaHanSansNeo-Regular.woff2) format('woff2');
+}
+
 .App {
   text-align: center;
+
+  position: relative;
+  min-height: 100vh;
+
+  font-family: spoqaHanSansNeoRegular;
+  /* background-color: rgba(255, 252, 239, 0.765); */
+  /* background-color: #fffdf0; */
+  background-color: #fefbf1;
 }
 
 .App-logo {

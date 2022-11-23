@@ -1,0 +1,27 @@
+.page__btnWrap ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page__btnWrap ul li button{
+  width: 30px;
+  height: 30px;
+  border: none;
+  color: #b2b6d6;
+  background-color: transparent;
+  padding-right: 15px;
+}
+
+.page__btnWrap ul li button.active {
+  color: rgb(78, 78, 78);
+  font-weight: bold;
+}
+
+.page__btnWrap ul li button:hover {
+  color: rgb(54, 53, 53);
+}
+
+.hiddenBtn {
+  display: none;
+}
