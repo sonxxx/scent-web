@@ -17,7 +17,6 @@ const Register = () => {
   //이메일 로컬 저장 변수
   const [localEmail, setLocalEmail] = useState("");
 
-  
   const onRegister = async () => {
     try {
       const user = await createUserWithEmailAndPassword(
@@ -70,6 +69,7 @@ const Register = () => {
     setRegisterPassword(e.target.value);
   };
 
+
   return (
     <div className={styles.register}>
         <div className={styles.register__form}>
@@ -97,7 +97,6 @@ const Register = () => {
             <button type="submit" onClick={(e)=>{onRegister(e); saveLocalEmail(e);}} disabled={!registerEmail || !registerPassword} className={styles.registerBtn}>회원가입</button>
           </form>
         </div>
-        
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { FiChevronLeft,FiChevronRight } from 'react-icons/fi';
 
 const Pagination = ({ totalPost, postPerPage, page, setPage}) => {
-  //페이지 이전, 다음 버튼 숨김
+  //이전, 다음 버튼 숨김
   let [pageHidden, setPageHidden] = useState(1);
   let [pageActive, setPageActive] = useState(1);
 
@@ -14,6 +14,7 @@ const Pagination = ({ totalPost, postPerPage, page, setPage}) => {
     pageNumbers.push(i);
   }
 
+  
   return (
     <div className={styles.page__btnWrap}>
       <ul>

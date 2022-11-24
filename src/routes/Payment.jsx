@@ -4,8 +4,6 @@ const Payment = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location.state.itemData[0].name);
-  console.log(location.state.finalAmount);
   const onClickPayment = () => {
 
     //가맹점 식별

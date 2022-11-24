@@ -2,6 +2,7 @@ import styles from './Latest.module.css';
 import { Link } from 'react-router-dom';
 
 const Latest = (props) => {
+  
   return (
     <div>
       <section className={styles.section}>

@@ -1,4 +1,4 @@
-# 👜👠Scent Shopping mall 프로젝트
+# 👜Scent Shopping mall 프로젝트
 
 ### 📌프로젝트 소개
 
@@ -25,6 +25,6 @@ React를 기반으로 한 SPA 페이지 입니다.
 
 > Scent 사이트 보러가기
 
-배포링크 주소 부분
+배포링크 주소
 
 <!-- See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information. -->

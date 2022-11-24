@@ -4,6 +4,7 @@ import { faTwitter, faInstagram, faFacebook, faYoutube } from "@fortawesome/free
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 function Footer() {
+  
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>

@@ -11,6 +11,7 @@ const Perfume = ({ productList }) => {
         setItemList(res);
       });
   },[]);
+  
   productList(itemList);
 
   return (

@@ -11,6 +11,7 @@ const Login = ({ setLoginEmail, setLoginPassword, onLogin}) => {
     setUser(currentUser);
   });
 
+  
   return (
     <div className={styles.login}>
         <div className={styles.login__form}>

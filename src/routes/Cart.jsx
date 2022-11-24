@@ -1,5 +1,5 @@
 import styles from './Cart.module.css'
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,7 @@ const Cart = () => {
   
   //상품 수량 저장
   const [itemCount, setItemCount] = useState();
-  //상품 총 가격 저장
+  //장바구니 내 상품 총 가격 저장
   const [totalPrice, setTotalPrice] = useState();
   //상품 삭제 
   const [itemDel, setItemDel] = useState();
@@ -45,6 +45,7 @@ const Cart = () => {
     let newPrice = price.reduce((a,b)=> (a+b));
     setTotalPrice(Math.floor(newPrice));
   }
+
 
   //체크박스 선택한 상품
   const [checkItem, setCheckItem] = useState([]);
@@ -179,7 +180,6 @@ const Cart = () => {
               }
             </tbody>
           </table>
-        
         }
         
         <div>

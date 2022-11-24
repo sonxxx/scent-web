@@ -88,6 +88,7 @@
 }
 
 
+
 @media screen and (max-width: 767px) {
   .item__wrap ul {
     grid-template-columns: 38vw 38vw;

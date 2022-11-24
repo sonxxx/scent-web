@@ -88,7 +88,7 @@ const App = ({ auth }) => {
     }
   }
 
-  
+
   return (
     <div className="App">
       <Nav itemList={itemList} onLogin={onLogin} loginData={loginData} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>

@@ -13,6 +13,7 @@ const Soap = ({ productList }) => {
         setItemList(res);
       });
   },[]);
+  
   productList(itemList);
 
   return (

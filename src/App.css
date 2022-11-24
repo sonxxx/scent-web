@@ -7,13 +7,9 @@
 
 .App {
   text-align: center;
-
   position: relative;
   min-height: 100vh;
-
   font-family: spoqaHanSansNeoRegular;
-  /* background-color: rgba(255, 252, 239, 0.765); */
-  /* background-color: #fffdf0; */
   background-color: #fefbf1;
 }
 

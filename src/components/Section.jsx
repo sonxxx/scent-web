@@ -11,7 +11,7 @@ const Section = ({itemList, setItemList}) => {
   //정렬
   let [sort, setSort] = useState();
 
-  // 페이지 관련(한 페이지에 보여줄 상품 갯수, 첫 번째 인덱스, 마지막 인덱스)
+  // pagination(한 페이지에 보여줄 상품 갯수, 첫 번째 인덱스, 마지막 인덱스)
   const lastIndex = page * postPerPage;
   const firstIndex = lastIndex - postPerPage;
   const showingPost = (itemList) => {

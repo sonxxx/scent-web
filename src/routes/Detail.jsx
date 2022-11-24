@@ -22,7 +22,7 @@ const Detail = ({ isLoggedIn }) => {
     }
   };
 
-  //'장바구니 담기'버튼 클릭 시 localStorage에 해당 상품 저장
+  //'장바구니 담기'버튼 클릭 시 localStorage에 해당 상품 저장(중복 시 수량 증가)
   const addItemLocal = () => {
     let cartItemData = JSON.parse(localStorage.getItem('cartItem'));
 
@@ -46,6 +46,7 @@ const Detail = ({ isLoggedIn }) => {
     }
   }
 
+  //상품 바로 구매 기능
   const nowBuy = () => {
     if(window.confirm(`해당 상품을 구매하시겠습니까?`)){
       localStorage.setItem('nowPurchaseItem', JSON.stringify([]));
@@ -69,6 +70,7 @@ const Detail = ({ isLoggedIn }) => {
       });
     }
   }
+
 
   return (
     <section className={styles.section}>

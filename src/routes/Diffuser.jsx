@@ -11,6 +11,7 @@ const Diffuser = ({ productList }) => {
         setItemList(res);
       });
   },[]);
+  
   productList(itemList);
 
   return (

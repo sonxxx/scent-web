@@ -38,6 +38,7 @@ const Nav = (props) => {
     navigate('/');
   }
 
+  
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>

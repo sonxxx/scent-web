@@ -1,5 +1,4 @@
 import styles from './Best.module.css';
-import { FiChevronLeft,FiChevronRight } from 'react-icons/fi';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -34,6 +33,7 @@ const Best = (props) => {
     props.setBest(newList);
   }
 
+  
   return (
     <div>
       <section className={styles.section}>

@@ -47,6 +47,8 @@ form input {
   background-color: #FFFFFF;
 }
 
+
+
 @media screen and (max-width: 391px) {
   .register__form {
     margin: 0 auto;

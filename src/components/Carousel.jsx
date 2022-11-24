@@ -38,6 +38,7 @@ const Carousel = () => {
     )
   };
 
+  
   return (
     <section className={styles.section__container}>
       <div className={styles.section__wrapper}>
