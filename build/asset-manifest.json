@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.00f49d95.css",
+    "main.js": "/static/js/main.fd4cfd6e.js",
+    "static/js/787.449c572a.chunk.js": "/static/js/787.449c572a.chunk.js",
+    "static/media/slider1.jpg": "/static/media/slider1.c0a7adf8436b41088b16.jpg",
+    "static/media/slider4.jpg": "/static/media/slider4.208fe32fc96b7db85368.jpg",
+    "static/media/slider3.jpg": "/static/media/slider3.980b7ff546fafcb4139c.jpg",
+    "static/media/slider2.jpg": "/static/media/slider2.638e9bbc2f1141481c29.jpg",
+    "static/media/SpoqaHanSansNeo-Regular.woff2": "/static/media/SpoqaHanSansNeo-Regular.452bf1579d6a73fbaffc.woff2",
+    "static/media/SpoqaHanSansNeo-Medium.woff2": "/static/media/SpoqaHanSansNeo-Medium.8589927a4fa35d637a8d.woff2",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.00f49d95.css.map": "/static/css/main.00f49d95.css.map",
+    "main.fd4cfd6e.js.map": "/static/js/main.fd4cfd6e.js.map",
+    "787.449c572a.chunk.js.map": "/static/js/787.449c572a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00f49d95.css",
+    "static/js/main.fd4cfd6e.js"
+  ]
+}
