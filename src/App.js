@@ -32,10 +32,10 @@ const App = ({ auth }) => {
   }
   useEffect(() => {
     setItemList(productList)
-  },[productList])
+  }, [productList])
 
   //Best상품 데이터 받아오기
-  function bestData(url){
+  function bestData(url) {
     fetch(url)
       .then(res => res.json())
       .then(res => {
@@ -48,10 +48,10 @@ const App = ({ auth }) => {
     loginCheck();
     bestData(`https://raw.githubusercontent.com/sonxxx/scent-json/master/data/best1.json`);
     //첫 접속 시 localStorage에 [] 있어야 여기에 자료 추가
-    if(!localStorage.getItem('checkEmail')){
+    if (!localStorage.getItem('checkEmail')) {
       localStorage.setItem('checkEmail', JSON.stringify([]))
     }
-  },[])
+  }, [])
 
   //로그인 기능
   const onLogin = async () => {
@@ -61,14 +61,13 @@ const App = ({ auth }) => {
         loginEmail,
         loginPassword
       );
-      console.log(user.user.email);
       loginData(user);
       return navigate(-1);
     } catch (error) {
       console.log(error.message);
     }
   };
-  
+
   //로그인 체크 여부
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -81,7 +80,7 @@ const App = ({ auth }) => {
   //로그인 - localstorage 체크
   const loginCheck = () => {
     let getEmail = localStorage.getItem('isLoggedIn');
-    if(getEmail){
+    if (getEmail) {
       setIsLoggedIn(true)
     } else {
       setIsLoggedIn(false)
@@ -91,17 +90,17 @@ const App = ({ auth }) => {
 
   return (
     <div className="App">
-      <Nav itemList={itemList} onLogin={onLogin} loginData={loginData} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+      <Nav itemList={itemList} onLogin={onLogin} loginData={loginData} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Routes>
-        <Route path="/" element={ <Main best={best} setBest={setBest} bestData={bestData} visible={visible} setVisible={setVisible} itemList={itemList}/> }/>
-        <Route path="/perfume" element={ <Perfume productList={productList}/> }/>
-        <Route path="/soap" element={ <Soap productList={productList}/> }/>
-        <Route path="/diffuser" element={ <Diffuser productList={productList}/> }/>
-        <Route path="/login" element={ <Login onLogin={onLogin} setLoginEmail={setLoginEmail} setLoginPassword={setLoginPassword}/> }/>
-        <Route path="/cart" element={ isLoggedIn === true? <Cart itemList={itemList}/> : <Login/> }/>
-        <Route path="/register" element={ <Register/> }/>
-        <Route path="/detail/:id" element={ <Detail isLoggedIn={isLoggedIn}/> }/>
-        <Route path="/payment" element={ <Payment/> } />
+        <Route path="/" element={<Main best={best} setBest={setBest} bestData={bestData} visible={visible} setVisible={setVisible} itemList={itemList} />} />
+        <Route path="/perfume" element={<Perfume productList={productList} />} />
+        <Route path="/soap" element={<Soap productList={productList} />} />
+        <Route path="/diffuser" element={<Diffuser productList={productList} />} />
+        <Route path="/login" element={<Login onLogin={onLogin} setLoginEmail={setLoginEmail} setLoginPassword={setLoginPassword} />} />
+        <Route path="/cart" element={isLoggedIn === true ? <Cart itemList={itemList} /> : <Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/detail/:id" element={<Detail isLoggedIn={isLoggedIn} />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
       <Footer />
     </div>
