@@ -55,7 +55,7 @@
 
 .sns {
   font-size: 27px;
-  padding: 0 15px;
+  /* padding: 20px 15px 0px 15px; */
 }
 
 .sns ul li a {
@@ -88,3 +88,14 @@
     height: 20px;
   }
 }
+
+@media screen and (max-width: 580px) {
+  .footer__content {
+    margin-top: 5px;
+  }
+
+  .footer__content .copy {
+    font-size: 12px;
+  }
+}
+
