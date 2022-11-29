@@ -20,11 +20,12 @@ const Login = ({ setLoginEmail, setLoginPassword, onLogin}) => {
           <form className={styles.content}>
             <input type="text" placeholder='이메일' onChange={(e)=>{setLoginEmail(e.target.value)}}/><br/>
             <input type="password" placeholder='비밀번호' onChange={(e)=>{setLoginPassword(e.target.value);}}/><br/>
-            <div className={styles.loginBtn}>
+          </form>
+
+          <div className={styles.loginBtn}>
               <button type="button" onClick={onLogin}>Login</button>
               <button type="button" style={{marginTop: '20px'}} onClick={()=>{ navigate('/register')}}>Sign Up</button>
-            </div>
-          </form>
+          </div>
         </div>
     </div>
   )
