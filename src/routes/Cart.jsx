@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { HiMinusSm, HiPlusSm } from "react-icons/hi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const Cart = () => {
   let navigate = useNavigate();
@@ -116,16 +116,6 @@ const Cart = () => {
         <h2>장바구니</h2>
         {
           cartItemData.length === 0 ?
-          null
-          :
-          <button className={styles.deleteButton} onClick={()=>checkDelete(cartItemData.id)}>
-          선택상품 삭제
-          </button>
-        }
-        
-
-        {
-          cartItemData.length === 0 ?
           <div className={styles.emptyCart}>
             <FontAwesomeIcon icon={faCartShopping}/>
             <p>장바구니에 상품을 담아보세요</p>
@@ -133,62 +123,112 @@ const Cart = () => {
 
           :
           
-          <table className={styles.cartList}>
-            
-            <colgroup> 
-              <col style={{width: '10%'}}/> 
-              <col style={{width: '16%'}}/> 
-              <col style={{width: '20%'}}/> 
-              <col style={{width: '20%'}}/> 
-              <col style={{width: '10%'}}/> 
-            </colgroup>
+          // <table className={styles.cartList}>
+          //   <colgroup> 
+          //     <col style={{width: '8%'}}/> 
+          //     <col style={{width: '15%'}}/> 
+          //     <col style={{width: '15%'}}/> 
+          //     <col style={{width: '10%'}}/> 
+          //     <col style={{width: '10%'}}/> 
+          //     <col style={{width: '5%'}}/> 
+          //   </colgroup>
 
-            <thead>
-              <tr>
-                <td><input type="checkbox" onChange={(e)=>checkAllHandler(e.target.checked)} checked={checkItem.length === cartItemData.length ? true : false }/>  전체({cartItemData.length})</td>
-                <td colSpan={2}>상품명</td>
-                <td>수량</td>
-                <td>판매가</td>
-                <td>주문관리</td>
-              </tr>
-            </thead>
+          //   <thead>
+          //     <tr>
+          //       <td><input type="checkbox" onChange={(e)=>checkAllHandler(e.target.checked)} checked={checkItem.length === cartItemData.length ? true : false }/>  전체({cartItemData.length})</td>
+          //       <td colSpan={2}>상품명</td>
+          //       <td>수량</td>
+          //       <td>판매가</td>
+          //       <td>주문관리</td>
+          //     </tr>
+          //   </thead>
 
-            <tbody className={styles.list__box}>
+          //   <tbody className={styles.list__box}>
+          //     {
+          //       cartItemData.map((cartItemData,index)=>{
+          //         return (
+          //           <tr key={cartItemData.id}>
+          //             <td className={styles.checkBox}><input type="checkbox" onChange={(e)=>checkHandler(e.target.checked, cartItemData.id)} checked={checkItem.includes(cartItemData.id) ? true : false }/></td>
+          //             <td>
+          //               <Link to={`/detail/${cartItemData.id}`} state={{itemList: cartItemData}}>
+          //                 <img src={cartItemData.image}/>
+          //               </Link>
+          //             </td>
+          //             <td><Link to={`/detail/${cartItemData.id}`} state={{itemList: cartItemData}}>{cartItemData.name}</Link></td>
+          //             <td>
+          //               <div className={styles.opt__countButton}>
+          //                 <button onClick={()=>{countMinus(cartItemData.id)}}><HiMinusSm /></button>
+          //                 <span>{cartItemData.count}</span>
+          //                 <button onClick={()=>{countPlus(cartItemData.id)}}><HiPlusSm /></button>
+          //               </div>
+          //             </td>
+          //             <td>{(cartItemData.price) * (cartItemData.count)}원</td>
+          //             <td><button className={styles.itemDel} onClick={()=> itemDelete(cartItemData.id)}>삭제</button></td>
+          //           </tr>
+          //         )
+          //       })
+          //     }
+          //   </tbody>
+          // </table>
+
+          <div>
+            <div className={styles.allCheck} >
+              <input type="checkbox" onChange={(e)=>checkAllHandler(e.target.checked)} checked={checkItem.length === cartItemData.length ? true : false }/>  전체({cartItemData.length})
+            </div>
+            <div className={styles.list__box}>
               {
                 cartItemData.map((cartItemData,index)=>{
                   return (
-                    <tr key={cartItemData.id}>
-                      <td><input type="checkbox" onChange={(e)=>checkHandler(e.target.checked, cartItemData.id)} checked={checkItem.includes(cartItemData.id) ? true : false }/></td>
-                      <td>
-                        <Link to={`/detail/${cartItemData.id}`} state={{itemList: cartItemData}}>
-                          <img src={cartItemData.image}/>
-                        </Link>
-                      </td>
-                      <td><Link to={`/detail/${cartItemData.id}`} state={{itemList: cartItemData}}>{cartItemData.name}</Link></td>
-                      <td>
-                        <div className={styles.opt__countButton}>
-                          <button onClick={()=>{countMinus(cartItemData.id)}}><HiMinusSm /></button>
-                          <span>{cartItemData.count}</span>
-                          <button onClick={()=>{countPlus(cartItemData.id)}}><HiPlusSm /></button>
+                    <ul key={cartItemData.id}>
+                      <div className={styles.chk__basket}>
+                        <li className={styles.checkBox}>
+                          <input type="checkbox" onChange={(e)=>checkHandler(e.target.checked, cartItemData.id)} checked={checkItem.includes(cartItemData.id) ? true : false }/>
+                        </li>
+                        <li className={styles.itemDel}>
+                          <button onClick={()=> itemDelete(cartItemData.id)}>
+                            <FontAwesomeIcon icon={faXmark}/>
+                          </button>
+                        </li>
+                      </div>
+                      
+                      <div className={styles.description__basket}>
+                        <li className={styles.imgBox}>
+                          <Link to={`/detail/${cartItemData.id}`} state={{itemList: cartItemData}}>
+                            <img src={cartItemData.image}/>
+                          </Link>
+                        </li>
+                        
+                        <div className={styles.optBox}>
+                          <li>
+                            <Link to={`/detail/${cartItemData.id}`} state={{itemList: cartItemData}}>{cartItemData.name}</Link>
+                          </li>
+                          <li>
+                            <div className={styles.opt__countButton}>
+                              <button onClick={()=>{countMinus(cartItemData.id)}}><HiMinusSm /></button>
+                              <span>{cartItemData.count}</span>
+                              <button onClick={()=>{countPlus(cartItemData.id)}}><HiPlusSm /></button>
+                            </div>
+                          </li>
+                          <li>{(cartItemData.price) * (cartItemData.count)} KRW</li>  
                         </div>
-                      </td>
-                      <td>{(cartItemData.price) * (cartItemData.count)}원</td>
-                      <td><button className={styles.itemDel} onClick={()=> itemDelete(cartItemData.id)}>삭제</button></td>
-                    </tr>
+                      </div>
+                    </ul>
                   )
                 })
               }
-            </tbody>
-          </table>
+            </div>
+          </div>
         }
         
         <div>
           {
             cartItemData.length === 0 ?
-            <Link to="/"><button className={styles.shopBtn}>쇼핑 계속하기</button></Link>
+            <Link to="/">
+              <button className={styles.shopBtn}>쇼핑 계속하기</button>
+            </Link>
             
             :
-            <div>
+            <div className={styles.totalList}>
               <div className={styles.totalBox}>
                 <div className={styles.totalBox__content}>
                   <div  className={styles.totalBox__left}>
@@ -197,18 +237,18 @@ const Cart = () => {
                   </div>
                   
                   <div className={styles.totalBox__right}>
-                    <p>{totalPrice} 원</p>
-                    <p>{delieveryPay} 원</p>
+                    <p>{totalPrice} KRW</p>
+                    <p>{delieveryPay} KRW</p>
                   </div>
                 </div>
                 <hr/>
                 <div className={styles.totalBox__result}>
                   <p>총 결제금액</p>
-                  <p>{finalAmount} 원</p>
+                  <p>{finalAmount} KRW</p>
                 </div>
               </div>
               <button onClick={() => navigate('/payment',{state:{itemData:cartItemData, finalAmount:finalAmount}})} className={styles.purchaseBtn}>
-                {cartItemData.length}개 상품 구매하기
+                {checkItem.length}개 상품 구매하기
               </button>
             </div>
           }

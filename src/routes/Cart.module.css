@@ -1,17 +1,17 @@
-.section {
+/* .section {
   width: 100%;
-  height: 100%;
   padding-top: 90px;
   padding-bottom: 140px;
+  overflow-x: hidden;
 }
 
 .container {
   position: relative;
   width: 100%;
-  height: 100%;
   max-width: 1450px;
   margin: 0 auto;
-  padding: 50px 10px;
+  margin-bottom: 300px;
+  padding: 80px 30px;
 }
 
 h2 {
@@ -31,6 +31,7 @@ h2 {
 .cartList {
   width: 100%;
   height: 100%;
+  padding: 0px 20px;
 }
 
 .list__box img {
@@ -83,8 +84,8 @@ td {
 }
 
 .itemDel {
-  width: 180px;
-  height: 40px;
+  width: 100px;
+  height: 35px;
   margin-top: 0px;
   background-color: #ffffff;
   border: 1px solid #eaeaea;
@@ -124,7 +125,7 @@ td {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  width: 45%;
   padding: 20px 30px;
   margin: 0 auto;
   margin-top: 50px;
@@ -164,4 +165,219 @@ td {
 .purchaseBtn:hover {
   color: #ffffff;
   background-color: #3a3a3a;
+}
+
+
+@media screen and (max-width: 767px) {
+  thead {
+    display: none;
+  }
+
+  .list__box td {
+    display: flex;
+  }
+
+  .list__box .checkBox {
+    display: none;
+  }
+
+  .totalBox {
+    width: 95%;
+  }
+} */
+
+
+.section {
+  width: 100%;
+  padding-top: 90px;
+  padding-bottom: 140px;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 300px;
+  padding: 80px 30px;
+}
+
+h2 {
+  text-align: left;
+  padding: 30px 40px 80px 0px;
+}
+
+.emptyCart {
+  padding-top: 100px;
+}
+
+.emptyCart p {
+  margin-bottom: 0px;
+  padding-top: 10px;
+}
+
+.shopBtn {
+  width: 220px;
+  height: 50px;
+  margin-top: 40px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.shopBtn:hover {
+  color: #ffffff;
+  background-color: #3a3a3a;
+}
+
+.allCheck {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.list__box ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #cecece;
+}
+
+.list__box li {
+  width: 100%;
+  padding-right: 35px;
+}
+
+.chk__basket {
+  display: flex;
+  width: 100%;
+  padding-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.chk__basket .checkBox {
+  text-align: left;
+}
+
+.chk__basket .itemDel {
+  text-align: right;
+}
+
+.chk__basket .itemDel button {
+  border: none;
+  background-color: transparent;
+}
+
+.description__basket {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.description__basket .imgBox {
+  width: 50%;
+}
+
+.description__basket img {
+  width: 40%;
+  height: 100%;
+}
+
+.description__basket .optBox {
+  display: inline-block;
+  width: 40%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.description__basket .optBox li {
+  margin-bottom: 10px;
+}
+
+.opt__countButton {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90px;
+  border: 1px solid #cecece;
+}
+
+.opt__countButton button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  color: #7a7a7a;
+  font-size: 20px;
+  margin-top: -5px;
+}
+
+.opt__countButton span {
+  padding: 0 10px;
+  color: #5d5d5d;
+}
+
+.totalList {
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.totalBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 65%;
+  padding: 20px 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.totalBox__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalBox__left {
+  text-align: left;
+}
+
+.totalBox hr {
+  width: 100%;
+  border: 1px solid #a3a3a3;
+}
+
+.totalBox__right {
+  text-align: right;
+}
+
+.totalBox__result {
+  display: flex;
+  justify-content: space-between;
+}
+
+.purchaseBtn {
+  width: 250px;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+}
+
+.purchaseBtn:hover {
+  color: #ffffff;
+  background-color: #3a3a3a;
+}
+
+
+@media screen and (max-width: 767px) {
+  .description__basket .optBox {
+    font-size: 13px;
+  }
 }
