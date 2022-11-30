@@ -67,7 +67,7 @@ const Best = (props) => {
                           </div>
                           <p>{item.category}</p>
                           <p>{item.name}</p>
-                          <p>{item.price}</p>
+                          <p>{item.price} KRW</p>
                         </div>
                       </Link>
                     </li>

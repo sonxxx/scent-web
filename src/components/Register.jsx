@@ -85,7 +85,9 @@ const Register = () => {
         <h1 className={styles.header}>Scent</h1>
 
         <form className={styles.content}>
-          <span>아이디(이메일)</span><br />
+          <div className={styles.emailBox}>
+            <span>아이디(이메일)</span>
+          </div><br />
           <input type="email" name="email" placeholder='이메일' onChange={(e) => { validationEmail(e); setLocalEmail(e.target.value); checkData(e); }} /><br />
           {
             emailError &&
@@ -95,8 +97,11 @@ const Register = () => {
             checkEmail &&
             <span className={styles.errorMessage}>중복된 이메일 주소 입니다.<br /></span>
           }
+          
 
-          <span>비밀번호</span><br />
+          <div className={styles.passwordBox}>
+            <span>비밀번호</span>
+          </div><br />
           <input type="password" name="password" placeholder='비밀번호' onChange={validationPassword} /><br />
           {
             passwordError &&

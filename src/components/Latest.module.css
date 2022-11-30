@@ -38,6 +38,7 @@
 .item__box h4 {
   font-size: 17px;
   text-align: left;
+  padding: 25px 0px 15px 32px;
   padding-left: 32px;
   padding-bottom: 15px;
 }
@@ -70,14 +71,10 @@
 }
 
 .item__text p {
-  margin-bottom: 0px;
-}
-
-.item__text h5 {
   width: 80%;
-  font-size: 15px;
+  font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-bottom: 5px;
+  margin-bottom: 0px;
 }

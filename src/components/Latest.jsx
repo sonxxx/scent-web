@@ -29,8 +29,8 @@ const Latest = (props) => {
                                     
                                     <div className={styles.item__text}>
                                       <p>{item.category}</p>
-                                      <h5>{item.name}</h5>
-                                      <p>{item.price}</p>
+                                      <p>{item.name}</p>
+                                      <p>{item.price} KRW</p>
                                     </div>
                                   </div>
                                 </Link>

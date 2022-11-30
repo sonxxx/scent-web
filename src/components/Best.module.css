@@ -107,8 +107,8 @@
   .sort {
     text-align: right;
     margin-bottom: 25px;
-    padding-right: 45px;
-    font-size: 10px;
+    padding-right: 25px;
+    font-size: 6px;
   }
   .sort button {
     width: 60px;
