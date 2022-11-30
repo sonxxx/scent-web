@@ -37,12 +37,16 @@ React를 기반으로 한 SPA 페이지 입니다.
 
 > 시연 영상
 
-<img width="100%" src="https://user-images.githubusercontent.com/88871060/204745929-372e626a-c94b-44ab-9b19-34d4c1df17ce.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/88871060/204768106-cf232a5c-d4b6-4a18-9c00-68559f5f99f3.gif">
 
 <br/><br/><br/>
 
-<img width="100%" src="https://user-images.githubusercontent.com/88871060/204747416-df52cc1d-214a-4e52-ad97-ed27d3fbb72d.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/88871060/204768345-5a5e2c88-e709-4429-a3f0-03562815b83f.gif">
 
 <br/><br/><br/>
 
-<img align="center" width="80%" src="https://user-images.githubusercontent.com/88871060/204746734-729dc446-2566-4162-9afb-caae4ca9032c.gif">
+<img width="100%" src="https://user-images.githubusercontent.com/88871060/204768452-eb309584-da92-4ae0-a06f-d1af57334aee.gif">
+
+<br/><br/><br/>
+
+<img width="70%" src="https://user-images.githubusercontent.com/88871060/204768636-e2a77a98-5034-49ff-b821-5e8831f14d1b.gif">
