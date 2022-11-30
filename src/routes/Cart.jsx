@@ -122,54 +122,6 @@ const Cart = () => {
           </div>
 
           :
-          
-          // <table className={styles.cartList}>
-          //   <colgroup> 
-          //     <col style={{width: '8%'}}/> 
-          //     <col style={{width: '15%'}}/> 
-          //     <col style={{width: '15%'}}/> 
-          //     <col style={{width: '10%'}}/> 
-          //     <col style={{width: '10%'}}/> 
-          //     <col style={{width: '5%'}}/> 
-          //   </colgroup>
-
-          //   <thead>
-          //     <tr>
-          //       <td><input type="checkbox" onChange={(e)=>checkAllHandler(e.target.checked)} checked={checkItem.length === cartItemData.length ? true : false }/>  전체({cartItemData.length})</td>
-          //       <td colSpan={2}>상품명</td>
-          //       <td>수량</td>
-          //       <td>판매가</td>
-          //       <td>주문관리</td>
-          //     </tr>
-          //   </thead>
-
-          //   <tbody className={styles.list__box}>
-          //     {
-          //       cartItemData.map((cartItemData,index)=>{
-          //         return (
-          //           <tr key={cartItemData.id}>
-          //             <td className={styles.checkBox}><input type="checkbox" onChange={(e)=>checkHandler(e.target.checked, cartItemData.id)} checked={checkItem.includes(cartItemData.id) ? true : false }/></td>
-          //             <td>
-          //               <Link to={`/detail/${cartItemData.id}`} state={{itemList: cartItemData}}>
-          //                 <img src={cartItemData.image}/>
-          //               </Link>
-          //             </td>
-          //             <td><Link to={`/detail/${cartItemData.id}`} state={{itemList: cartItemData}}>{cartItemData.name}</Link></td>
-          //             <td>
-          //               <div className={styles.opt__countButton}>
-          //                 <button onClick={()=>{countMinus(cartItemData.id)}}><HiMinusSm /></button>
-          //                 <span>{cartItemData.count}</span>
-          //                 <button onClick={()=>{countPlus(cartItemData.id)}}><HiPlusSm /></button>
-          //               </div>
-          //             </td>
-          //             <td>{(cartItemData.price) * (cartItemData.count)}원</td>
-          //             <td><button className={styles.itemDel} onClick={()=> itemDelete(cartItemData.id)}>삭제</button></td>
-          //           </tr>
-          //         )
-          //       })
-          //     }
-          //   </tbody>
-          // </table>
 
           <div>
             <div className={styles.allCheck} >
