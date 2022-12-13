@@ -11,7 +11,7 @@ const Cart = () => {
   //상품 수량 저장
   const [itemCount, setItemCount] = useState();
   //장바구니 내 상품 총 가격 저장
-  const [totalPrice, setTotalPrice] = useState();
+  const [totalPrice, setTotalPrice] = useState(0);
   //상품 삭제 
   const [itemDel, setItemDel] = useState();
   //배송비
@@ -37,43 +37,51 @@ const Cart = () => {
     }
   }
 
-  //상품 총 price 계산
-  const calculator = () => {
-    let price = cartItemData.map((item, index)=>{
-      return item.price * item.count
-    });
-    let newPrice = price.reduce((a,b)=> (a+b));
-    setTotalPrice(Math.floor(newPrice));
-  }
-
 
   //체크박스 선택한 상품
   const [checkItem, setCheckItem] = useState([]);
 
   //전체선택
-  const checkAllHandler = (checked) => {
+  const checkAllHandler = (checked, id) => {
     if(checked) {
       //전체 선택 시 모든 상품(id)를 배열에 담는다
       const idArr = [];
-      cartItemData.forEach(i => idArr.push(i.id))
+      cartItemData.forEach(i => idArr.push(i.id));
       setCheckItem(idArr)
+
+      let price = cartItemData.map((item, index)=>{
+        return item.price * item.count
+        });
+      let sumPrice = price.reduce((a,b)=> (a+b));
+      setTotalPrice(Math.floor(sumPrice));
     } else {
       //전체 선택 해제 시 checkItem을 빈 배열로 업데이트
       setCheckItem([])
+      setTotalPrice(0);
     }
   }
 
   //개별선택
-  const checkHandler = (checked, id) => {
+  const checkHandler = (checked, id, price) => {
+      const itemIndex = cartItemData.findIndex(i => i.id === id);
+      //장바구니에 담긴 해당상품의 가격 가져오는 변수
+      const checkitemPrice = cartItemData[itemIndex].price;
+      //장바구니에 담긴 해당상품의 개수 가져오는 변수
+      const checkitemCount = cartItemData[itemIndex].count;
+      const checkTotal = checkitemPrice*checkitemCount;
+
     if(checked) {
       //개별 선택 시 해당 상품을 배열에 추가
       setCheckItem(prev => [...prev, id]);
+      //체크한 상품의 가격 누적(총 합계위함)
+      setTotalPrice(totalPrice + checkTotal);
     } else {
       //개별 선택 해제 시 체크된 상품을 제외한 배열
       setCheckItem(checkItem.filter((element) => element !== id));
+      setTotalPrice(totalPrice - checkTotal);
     }
   }
-  
+
   //체크박스 '삭제' 기능
   const checkDelete = () => {
     if(window.confirm(`선택하신 ${checkItem.length}개 상품을 장바구니에서 삭제하시겠습니까?`)){
@@ -101,14 +109,6 @@ const Cart = () => {
     localStorage.setItem('cartItem', JSON.stringify(cartItemData));
   }
 
-  useEffect(()=>{
-    if(cartItemData.length != 0){
-      calculator()
-    } else {
-      setTotalPrice(0)
-    }
-  },[cartItemData, itemCount]);
-
 
   return (
     <div className={styles.section}>
@@ -125,7 +125,7 @@ const Cart = () => {
 
           <div>
             <div className={styles.allCheck} >
-              <input type="checkbox" onChange={(e)=>checkAllHandler(e.target.checked)} checked={checkItem.length === cartItemData.length ? true : false }/>  전체({cartItemData.length})
+              <input type="checkbox" onChange={(e)=>checkAllHandler(e.target.checked,cartItemData.id, cartItemData.price)} checked={checkItem.length === cartItemData.length ? true : false }/>  전체({cartItemData.length})
             </div>
             <div className={styles.list__box}>
               {
@@ -134,7 +134,7 @@ const Cart = () => {
                     <ul key={cartItemData.id}>
                       <div className={styles.chk__basket}>
                         <li className={styles.checkBox}>
-                          <input type="checkbox" onChange={(e)=>checkHandler(e.target.checked, cartItemData.id)} checked={checkItem.includes(cartItemData.id) ? true : false }/>
+                          <input type="checkbox" onChange={(e)=>checkHandler(e.target.checked, cartItemData.id, cartItemData.price)} checked={checkItem.includes(cartItemData.id) ? true : false }/>
                         </li>
                         <li className={styles.itemDel}>
                           <button onClick={()=> itemDelete(cartItemData.id)}>
@@ -190,13 +190,23 @@ const Cart = () => {
                   
                   <div className={styles.totalBox__right}>
                     <p>{totalPrice} KRW</p>
-                    <p>{delieveryPay} KRW</p>
+                    {
+                      checkItem.length === 0 ?
+                      <p>0 KRW</p>
+                      :
+                      <p>{delieveryPay} KRW</p>
+                    }
                   </div>
                 </div>
                 <hr/>
                 <div className={styles.totalBox__result}>
                   <p>총 결제금액</p>
-                  <p>{finalAmount} KRW</p>
+                  {
+                    checkItem.length === 0 ?
+                    <p>0 KRW</p>
+                    :
+                    <p>{finalAmount} KRW</p>
+                  }
                 </div>
               </div>
               <button onClick={() => navigate('/payment',{state:{itemData:cartItemData, finalAmount:finalAmount}})} className={styles.purchaseBtn}>
